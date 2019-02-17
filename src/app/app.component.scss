@@ -1,0 +1,17 @@
+.fullheight {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    .content-wrapper {
+        flex-grow: 2;
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: block;
+        flex-direction: column;
+        height: 100%;
+        position: relative;
+    }
+}

@@ -1,0 +1,10 @@
+.agm-wapper{
+    display: block;
+    // flex-direction: column;
+    height: 100%;
+    position: relative;
+    agm-map {
+    // flex: 1 1 100%;
+    height: 100%;
+}
+}
