@@ -1,3 +1,12 @@
-<p>
-  home works!
-</p>
+<div class="container">
+  <h2>Latest Messages</h2>
+  <mat-list *ngFor="let message of latestMessages">
+    <mat-list-item (click)="navToChat()">
+      <mat-icon matListIcon>person</mat-icon>
+      <h3 matLine> {{message.CreatedByUserName}} </h3>
+      <p matLine>{{message.MessageText}}</p>
+      <p matLine>{{message.CreatedDate | date:'short'}}</p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>

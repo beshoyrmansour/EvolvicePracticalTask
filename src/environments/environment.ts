@@ -3,8 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BaseURL: "http://localhost:3000"
 };
+/**
+ * To Run Backend server install json-server "npm i -g json-server"
+ * then run "json-server --watch db.json"
+ */
+
 
 /*
  * For easier debugging in development mode, you can import the following file

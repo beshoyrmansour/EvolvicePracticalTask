@@ -1,0 +1,57 @@
+
+.messages-wapper {
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    mat-chip {
+        &:first-child {
+            margin-top: 15px;
+        }
+        flex-direction: column;
+        max-width: 70%;
+        height: 100%;
+        min-height: 1em;
+        @media (max-width: 599px) {
+            max-width: 90%;
+        }
+        .messageHead {
+            width: 100%;
+            margin-bottom: 0.5em;
+            display: flex;
+            justify-content: space-between;
+            .messageSender {
+                text-align: left;
+                font-size: 1.5em;
+            }
+            .messageDate {
+                text-align: right;
+                font-size: 0.7em;
+            }
+        }
+        .messageText {
+            align-self: start;
+            justify-self: start;
+        }
+    }
+    .pull-right {
+        position: relative;
+        margin-left: auto !important;
+    }
+}
+.messages-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    margin-top: 0.5rem;
+    button {
+        width: 40%;
+        height: min-content;
+    }
+}
+
+.new-message-input {
+    flex-basis: inherit;
+    mat-form-field {
+        width: 100%;
+    }
+}

@@ -1,3 +1,32 @@
-<p>
-  chat works!
-</p>
+<div class="container">
+  <div class="messages-wapper" #MessagesList [scrollTop]="MessagesList.scrollHeight">
+    <!--  #MessagesList -->
+    <mat-chip-list class="mat-chip-list-stacked">
+      <mat-chip *ngFor="let message of messages | async" selected
+        [color]="message.CreatedByUserId ===currentUser ? 'accent': 'primary'"
+        [ngClass]="{'pull-right': message.CreatedByUserId ===currentUser}">
+        <div class="messageHead">
+          <div class="messageSender">{{message.CreatedByUserName}}</div>
+          <div class="messageDate">{{message.CreatedDate | date:'short'}}</div>
+        </div>
+        <p class="messageText">
+          {{message.MessageText}}
+        </p>
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+  <div class="messages-nav">
+    <button mat-raised-button color="accent" *ngIf="pageNumber < ((allMessagesLenght / 5)-1)" (click)="NextMessages()">
+      <mat-icon>navigate_before</mat-icon> Previous
+    </button>
+    <button mat-raised-button color="accent" *ngIf="pageNumber > 0" (click)="PreviousMessages()">
+      Next <mat-icon>navigate_next</mat-icon>
+    </button>
+  </div>
+  <div class="new-message-input">
+    <mat-form-field color="accent" appearance="outline">
+      <textarea matInput [(ngModel)]="newMessageText" placeholder="Write Your Message" type="text"></textarea>
+      <mat-icon matSuffix color="primary" (click)="SendMessaage()" *ngIf="newMessageText !== ''">send</mat-icon>
+    </mat-form-field>
+  </div>
+</div>
